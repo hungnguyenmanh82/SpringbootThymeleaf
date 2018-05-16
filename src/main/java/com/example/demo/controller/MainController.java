@@ -25,10 +25,10 @@ public class MainController {
  
     // Inject via application.properties
     @Value("${welcome.message}")
-    private String message;
+    private String message;          //biến này dùng trực tiếp ở *.html
  
-    @Value("${error.message}")
-    private String errorMessage;
+    @Value("${error.message}")    // Inject via application.properties
+    private String errorMessage;   //biến này dùng trực tiếp ở *.html
  
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public String index(Model model) {
