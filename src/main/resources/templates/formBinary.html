@@ -4,9 +4,9 @@
 
 <h2>HTML Forms</h2>
 
-<form action="/postBinary" method="post">
-  First name:<br>
-  <input type="text" name="data" value="du lieu gui POST request body abcdef">
+<form action="/postBinary" method="post" enctype="multipart/form-data">
+  body of post request is a file:
+  <input type="file" name="fileToUpload" id="fileToUpload">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
