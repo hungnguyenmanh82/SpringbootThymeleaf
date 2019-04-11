@@ -25,7 +25,6 @@ import com.example.demo.form.PersonForm;
 import com.example.demo.model.Person;
 
 
-
 @Controller
 public class HttpRequestResponeController {
 
@@ -36,10 +35,14 @@ public class HttpRequestResponeController {
 	 * Phan content-type: application/octect-stream   => dùng html form ko dc. Phai dung ARC plugin của google hoặc Từ javaSource moi set dc content-type 
 	 * neu html form type= text  => thì inputstream se tra ve la empty
 	 * html form type sẽ phải quy đổi ra các content-type chuẩn của http protocol
+	 * vd:
+	 *   /report/1
+	 *   /report/2
+	 *   /report/3
 	 */
 	@RequestMapping(value = "/report/{objectId}", method = RequestMethod.GET)
-	@ResponseBody 
-	public void generateReport(
+	// @ResponseBody void: ko trả ve giá trị => dùng HttpServletResponse để trả về giá trị
+	public @ResponseBody void generateReport(
 			@PathVariable("objectId") Long objectId, 
 			HttpServletRequest request, 
 			HttpServletResponse response) throws IOException, ServletException {

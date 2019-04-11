@@ -19,8 +19,9 @@ public class SessionIdController {
   
     //================================ test: GET and POST ======================================   
     @RequestMapping(path = "/getSessionId", method = RequestMethod.GET)
-    @ResponseBody    //de tra ve kieu String
-    public String testGetRequest(HttpSession session){
+    //@ResponseBody String: de tra ve kieu String
+    // parameter của Spring là khá tùy ý: Model, HttpSession,... dùng cái nào thì add vào cái đó
+    public @ResponseBody String testGetRequest(HttpSession session){
     	
     	String sessionId = "SessionId = " + session.getId();
 

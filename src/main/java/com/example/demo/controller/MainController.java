@@ -66,6 +66,11 @@ public class MainController {
     }
  
     
+    /**
+     * @modelAtribute("personForm") PersonForm personForm:  
+     * Springboot sẽ lấy dữ liệu từ Post Request (html form) ghi vào PersonForm và
+     *  save ở Model với attribute name = "personForm"
+     */
     @RequestMapping(value = { "/addPerson" }, method = RequestMethod.POST)
     public String savePerson(Model model, //
             @ModelAttribute("personForm") PersonForm personForm) {
@@ -97,7 +102,7 @@ public class MainController {
      */
     @RequestMapping(path = "/form", method = RequestMethod.GET)
     public String showFormForPost(){
-        return "form";
+        return "form";   // trả về templates/form.html
     }
     
     /**
