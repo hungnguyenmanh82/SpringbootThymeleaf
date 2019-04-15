@@ -6,27 +6,50 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-	<h1>Welcome</h1>
+	<h1>Welcome 1</h1>
 	<h2 th:utext="${message}">..!..</h2>
 
 	<!--  
-       
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}
-          
+         <a th:href="@{/order/list}">
+         If our app is installed at http://localhost:8080/myapp, this URL will output:
+         <a href="/myapp/order/list">   
          -->
+    <h3>ThymleafController.java: </h3>
 
+	<a th:href="@{/thymleafGuide}">Thymleaf Guide</a>
+	<br>
+	<br>
+  
+	<h3>MainController.java:</h3>
 	<a th:href="@{/personList}">Person List</a>
 	<br>
-	<a href="/loginForm">Spingboot POST request from html form</a>
+	<br>
+	<a th:href="@{/addPerson}">Person List</a>
 	<br>
 	<a href="/get">test Get return String</a>
 	<br>
 	<a href="/form">test POST return body of request</a>
-		<br>
-	<a href="/formBinary">test POST return body of request Binary</a>
+	<br>
 	
+	<h3>FormController.java: </h3>
+	<a href="/loginForm">Spingboot POST request from html form</a>
+	<br>
+	
+	<h3>BinaryBodyController.java: </h3>
+	<a href="/formBinary">test POST return body of request Binary</a>
+	<br>
+	
+	<h3>DownloadPrivateController.java: </h3>
+	<p> là truy cập 1 file ở private folder nên phải dùng qua @controller</p>
+	<p> main/resources/ => WEB-INF/classes/ </p>
+	<a href="/image/smile">GET: Response body is binary (use Appache Common IO lib)</a>
+	<br>
+	<a href="/image/smile.jpg">GET: Response an Image *.jpg (use Appache Common IO lib)</a>
+	<br>
+	<a href="/file/file.txt">GET: Response a (use Appache Common IO lib)</a>
+	<br>
+	
+
 </body>
 
 </html>

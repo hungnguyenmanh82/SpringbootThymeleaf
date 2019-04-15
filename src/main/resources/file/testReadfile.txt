@@ -1,0 +1,5 @@
+File lien quan tới Servlet hay Java core nên để ở thu mục Resource thay vì để ở "/WEB-INF"
+
+Describe your problem then you will resolve 50% the problem
+Better than best.
+The past and the future are not true. Live with the present

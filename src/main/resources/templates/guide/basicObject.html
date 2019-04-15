@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h>đây là các Variable của System </h>
+	<h3>Expression Basic Objects</h3>
+	<p>
+		When evaluating OGNL expressions on the context variables, some
+		objects are made available to expressions for higher flexibility.
+		These objects will be referenced (per OGNL standard) starting with the
+		<code>#</code>
+		symbol:
+	</p>
+	<ul>
+		<li><code>#ctx</code>: the context object.</li>
+		<li><code>#vars:</code> the context variables.</li>
+		<li><code>#locale</code>: the context locale.</li>
+		<li><code>#request</code>: (only in Web Contexts) the <code>HttpServletRequest</code>
+			object.</li>
+		<li><code>#response</code>: (only in Web Contexts) the <code>HttpServletResponse</code>
+			object.</li>
+		<li><code>#session</code>: (only in Web Contexts) the <code>HttpSession</code>
+			object.</li>
+		<li><code>#servletContext</code>: (only in Web Contexts) the <code>ServletContext</code>
+			object.</li>
+	</ul>
+	<br>
+	<br>
+
+	<span th:text="${#locale.country}" style="color: red;"></span>.
+
+
+</body>
+
+</html>

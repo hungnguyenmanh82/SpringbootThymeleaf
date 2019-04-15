@@ -9,12 +9,12 @@
       <h1>Create a Person:</h1>
        
       <!--  
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}         
+         <a th:href="@{/order/list}">
+         If our app is installed at http://localhost:8080/myapp, this URL will output:
+         <a href="/myapp/order/list">   
          -->
           
-      <form th:action="@{/addPerson}"
+      <form th:action="@{/createPerson}"
          th:object="${personForm}" method="POST">
          First Name:
          <input type="text" th:field="*{firstName}" />    
@@ -33,6 +33,8 @@
          style="color:red;font-style:italic;">
          ...
       </div>
+      <br/><br/>
+      <p> AddPerson</p>
        
    </body>
 </html>

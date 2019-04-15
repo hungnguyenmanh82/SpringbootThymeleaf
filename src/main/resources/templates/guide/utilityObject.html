@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h>đây là các Variable của System </h>
+	<h3>Expression Utility Objects</h3>
+	<p>Besides these basic objects, Thymeleaf will offer us a set of
+		utility objects that will help us perform common tasks in our
+		expressions.</p>
+	<ul>
+		<li><code>#execInfo</code>: information about the template being
+			processed.</li>
+		<li><code>#messages</code>: methods for obtaining externalized
+			messages inside variables expressions, in the same way as they would
+			be obtained using #{…} syntax.</li>
+		<li><code>#uris</code>: methods for escaping parts of URLs/URIs</li>
+		<li><code>#conversions</code>: methods for executing the
+			configured <em>conversion service</em> (if any).</li>
+		<li><code>#dates</code>: methods for <code>java.util.Date</code>
+			objects: formatting, component extraction, etc.</li>
+		<li><code>#calendars</code>: analogous to <code>#dates</code>,
+			but for <code>java.util.Calendar</code> objects.</li>
+		<li><code>#numbers</code>: methods for formatting numeric
+			objects.</li>
+		<li><code>#strings</code>: methods for <code>String</code>
+			objects: contains, startsWith, prepending/appending, etc.</li>
+		<li><code>#objects</code>: methods for objects in general.</li>
+		<li><code>#bools</code>: methods for boolean evaluation.</li>
+		<li><code>#arrays</code>: methods for arrays.</li>
+		<li><code>#lists</code>: methods for lists.</li>
+		<li><code>#sets</code>: methods for sets.</li>
+		<li><code>#maps</code>: methods for maps.</li>
+		<li><code>#aggregates</code>: methods for creating aggregates on
+			arrays or collections.</li>
+		<li><code>#ids</code>: methods for dealing with id attributes
+			that might be repeated (for example, as a result of an iteration).</li>
+	</ul>
+
+	<p>
+		Today is: <span th:text="${#calendars.format(#calendars.createNow(),'dd MMMM yyyy')}"></span>
+	</p>
+
+
+</body>
+
+</html>
