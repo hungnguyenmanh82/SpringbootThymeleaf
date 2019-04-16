@@ -6,23 +6,42 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-	<h1> Vd hiển thị Model variable: </h1>
-	
+	<h1>Vd hiển thị Model variable:</h1>
+	<span style="color: red;">"th:text": là value của html tag dạng
+		String </span>
+	<br>
+
+	<!-- "th:text": là value của html tag dạng	String -->
 	<h2 th:text="${message}"></h2>
 	<span th:text="${message}" style="color: red;"> haha</span>
 	<p th:text="${message}"></p>
 	<div th:text="${message}" />
 
-	<!-- show field -->
+	<!-- show field: cách 1 -->
+	<h3>cách 1:</h3>
 	<span th:text="${person.firstName}" />
-	<span th:text="${person.lastName}" />
+	<span th:text="${person.lastName} + ' blabla'" />
 
+	<!-- show field: cách 2 -->
+	<!-- *{firstName} là field của ${person} -->
+	<h3>cách 2: </h3>
 	<form th:action="@{/createPerson}" th:object="${person}" method="POST">
 		First Name: <input type="text" th:field="*{firstName}" /> <br />
 		Last Name: <input type="text" th:field="*{lastName}" /> <br /> <input
 			type="submit" value="Create" />
 	</form>
 
+	<!-- show field: cách 2 -->
+	<!-- *{firstName} là field của ${person} -->
+	<h3>cách 3:</h3>
+	<div th:object="${person}">
+		<p>
+			Name: <span th:text="*{firstName}"></span>.
+		</p>
+		<p>
+			Surname: <span th:text="*{lastName}"></span>.
+		</p>
+	</div>
 	<br>
 	<br>
 

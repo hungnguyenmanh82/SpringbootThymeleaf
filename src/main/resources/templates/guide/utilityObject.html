@@ -39,10 +39,14 @@
 		<li><code>#ids</code>: methods for dealing with id attributes
 			that might be repeated (for example, as a result of an iteration).</li>
 	</ul>
+	
+	<p> dùng từ khóa ở trên search search google vd: <span style="color: red;">  "thymleaf  #calendar example"</span> </p>
 
-	<p>
-		Today is: <span th:text="${#calendars.format(#calendars.createNow(),'dd MMMM yyyy')}"></span>
-	</p>
+	<div>
+		Today is: <span
+			th:text="${#calendars.format(#calendars.createNow(),'dd MMMM yyyy')}"></span>
+	</div>
+
 
 
 </body>

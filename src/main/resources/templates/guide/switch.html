@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>th:switch</h1>
+	<p style="color: red"> có thể dùng switch thay cho "if then" được</p>
+	<!-- .name() là tên của ENUM -->
+	<h3>cách 1: Enum .name() is a String type</h3>
+	<div th:switch="${user.role.name()}">
+		<!-- 'ADMIN' single quote is a String  -->
+		<p th:case="'ADMIN'">User is an administrator</p>
+		<p th:case="'USER'">User is an User</p>
+		<p th:case="*">User is some other thing</p>
+	</div>
+	
+	<h3>cách 2: Enum .ordinal() is int type</h3>
+	<!-- .ordinal() là vị trí của ENUM là kiểu Int-->
+	<div th:switch="${user.role.ordinal()}">
+		<!-- ko dùng single quote  -->
+		<p th:case="0">User is an administrator</p>
+		<p th:case="1">User is an User</p>
+		<p th:case="*">User is some other thing</p>
+	</div>
+	
+	<h3>cách 3: ENUM java name</h3>
+	<div th:if="${user.role == T(com.example.demo.model.ERole).ADMIN }">
+		<span style="color: blue">User is an administrator</span>
+	</div>
+	
+	<h3>cách 3: String type with SWITCH </h3>
+	<div th:switch="${user.name}">
+		<!-- 'Hung' single quote is a String  -->
+		<p th:case="'Hung'">my name is Hung</p>
+		<p th:case="*">User is some other thing</p>
+	</div>
+</body>
+
+</html>

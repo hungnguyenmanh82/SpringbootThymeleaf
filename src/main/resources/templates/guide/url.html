@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Vd hiển thị Linh URL:</h1>
+
+	<!--  
+         <a th:href="@{/order/list}">
+         If our app is installed at http://localhost:8080/myapp, this URL will output:
+         <a href="/myapp/order/list">   
+         -->
+	<a th:href="@{/thymleafGuide}"> vd: show URL compare to context path </a>
+	<br>
+	<!-- ${urlTest} là model variable -->
+	<a th:href="${urlTest}">vd: URL get from Model variable</a>
+	<br>
+
+	<!-- ${urlRelative} là model variable -->
+	<!-- single quote -->
+	<a th:href="'https://www.thymeleaf.org/doc/tutorials/3.0/'+${urlRelative}"> vd2: URL get from Model variable</a>
+	<br>
+	
+	<!-- ${urlRelative} và ${tutorials} là model variable -->
+	<!-- single quote -->
+	<a th:href="'https://www.thymeleaf.org/doc/'+ ${tutorials} + '/3.0/'+${urlRelative}"> vd3: URL get from Model variable</a>
+	<br>
+	
+	<!-- show parameter in URL  -->
+	<a th:href="@{/getPerson/}+${person.firstName}"> vd4: show parameter in URL: "http://localhost:8080/getPerson/Hung"</a>
+	<br>
+	<a th:href="@{/getPerson/details(firstName=${person.firstName})}"> vd5: show parameter in URL: "http://localhost:8080/getPerson/details?firstName=Hung"</a>
+	<br>
+	<a th:href="@{/getPerson/details(firstName=${person.firstName},lastName=${person.lastName})}"> vd6: show parameter in URL: "http://localhost:8080/getPerson/details?firstName=Hung&lastName=Nguyen%20Manh"</a>
+	<br>
+
+</body>
+
+</html>

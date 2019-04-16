@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Person List</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<style>
+.classA {
+	color: blue;
+}
+
+.classB {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1>Thymleaf: css Class</h1>
+	<a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values"> https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values</a>
+
+	<div th:class="${user.isActive()}? 'classA' : 'classB'">
+		ko co viec gi kho
+	</div>
+</body>
+</html>

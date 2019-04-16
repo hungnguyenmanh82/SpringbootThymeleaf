@@ -6,19 +6,29 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-	<h1>Welcome 1</h1>
-	<h2 th:utext="${message}">..!..</h2>
+	<h1>th:if</h1>
 
-	<!--  
-         <a th:href="@{/order/list}">
-         If our app is installed at http://localhost:8080/myapp, this URL will output:
-         <a href="/myapp/order/list">   
-         -->
-	<h3>MainController.java:</h3>
-	<a th:href="@{/personList}">Person List</a>
-	<br>
-	<br>
+	<!-- if -->
+	<div th:if="${user.role.name()} eq 'ADMIN'">
+		<span style="color: blue"> this is the Admin</span>
+	</div>
 
+	<!-- if not equal -->
+	<!-- eq là của String -->
+	<!-- nếu dùng '==' thì sẽ compare Object reference -->
+	<div th:unless="${user.role.name()} eq 'USER'">
+		<span style="color: red"> this is not the USER role</span>
+	</div>
+
+	<!-- vơi Primitive type: thì dùng toán tử như bình thường  -->
+	<!-- biến phải là Public -->
+	<div th:if="${user.isActive()} == true">
+		<span style="color: black"> this User is Active</span>
+	</div>
+
+	<div th:if="${user != null}">
+		<span style="color: green"> th:if="${user != null}" </span>
+	</div>
 
 </body>
 
