@@ -34,6 +34,8 @@ public class FormController {
      */
     @RequestMapping(path = "/loginForm", method = RequestMethod.GET)
     public String showFormForPost(){
+    	System.out.println("/loginForm");
+    	
         return "loginForm";   // trả về templates/loginForm.html
     }
     
@@ -44,7 +46,9 @@ public class FormController {
      */
     @RequestMapping(value = { "/logintest" }, method = RequestMethod.POST)
     public @ResponseBody String savePerson(@ModelAttribute("loginForm") LoginForm loginForm) {
- 
+    	
+    	System.out.println("/logintest");
+    	
         String userName = loginForm.getUserName();
         String passWord = loginForm.getPassword();
 

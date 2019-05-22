@@ -40,7 +40,7 @@ public class MainController {
 
 	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
 	public String index(Model model) {
-
+		System.out.println("/");
 		model.addAttribute("message", message);
 
 		return "index";  // trả về templates/index.html
@@ -49,7 +49,8 @@ public class MainController {
 	// use @ResponseBody return String instead of template file from Thymeleaf
 	@RequestMapping(value = { "/personList" }, method = RequestMethod.GET)
 	public String personList(Model model) {
-
+		System.out.println("/personList");
+		
 		model.addAttribute("persons", persons);
 
 		return "personList"; // trả về templates/personList.html
@@ -58,7 +59,8 @@ public class MainController {
 
 	@RequestMapping(value = { "/addPerson" }, method = RequestMethod.GET)
 	public String showAddPersonPage(Model model) {
-
+		System.out.println("/addPerson");
+		
 		PersonForm personForm = new PersonForm();
 		model.addAttribute("personForm", personForm);
 
@@ -74,7 +76,9 @@ public class MainController {
 	@RequestMapping(value = { "/createPerson" }, method = RequestMethod.POST)
 	public String savePerson(Model model, //
 			@ModelAttribute("personForm") PersonForm personForm) {
-
+		
+		System.out.println("/createPerson");
+		
 		String firstName = personForm.getFirstName();
 		String lastName = personForm.getLastName();
 
@@ -94,6 +98,8 @@ public class MainController {
 	@RequestMapping(path = "/get", method = RequestMethod.GET)
 	//de tra ve kieu String
 	public @ResponseBody  String testGetRequest(){
+		System.out.println("/get");
+		
 		return "test: Get request tra ve String";
 	}
 
@@ -102,6 +108,8 @@ public class MainController {
 	 */
 	@RequestMapping(path = "/form", method = RequestMethod.GET)
 	public String showFormForPost(){
+		System.out.println("/form");
+		
 		return "form";   // trả về templates/form.html
 	}
 
@@ -111,7 +119,8 @@ public class MainController {
 	@RequestMapping(path = "/post", method = RequestMethod.POST)
 	@ResponseBody    //de tra ve kieu String
 	public String testPostRequest(@RequestBody String request){
-
+		System.out.println("/post");
+		
 		return "body of Post request:\n"+ request;
 	}
 
@@ -121,6 +130,7 @@ public class MainController {
 	 */
 	@RequestMapping(path = "/formBinary", method = RequestMethod.GET)
 	public String showFormForPostBinary(){
+		System.out.println("/formBinary");
 		return "formBinary";
 	}
 

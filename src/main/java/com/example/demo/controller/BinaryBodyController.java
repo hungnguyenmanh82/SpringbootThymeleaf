@@ -37,6 +37,7 @@ public class BinaryBodyController {
 	//@ResponseBody byte[]: de tra ve body of response kieu byte[]
 	public @ResponseBody String acceptData(InputStream dataStream) throws IOException{
 
+		System.out.println("/postBinary");
 		//read data from inputStream
 		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 		int nRead;

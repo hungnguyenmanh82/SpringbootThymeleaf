@@ -33,6 +33,7 @@ public class DownloadPrivateController {
 	 */
 	@RequestMapping(path = "/image/smile", method = RequestMethod.GET)
 	public @ResponseBody byte[] getImage() throws IOException {
+		System.out.println("/image/smile");
 		
 		InputStream in = getClass().getResourceAsStream("/file/smile.jpg"); //  WEB-INF/classes/file/smile  
 		return IOUtils.toByteArray(in);
@@ -45,6 +46,8 @@ public class DownloadPrivateController {
 						method = RequestMethod.GET,
 						produces = MediaType.IMAGE_JPEG_VALUE)
 	public @ResponseBody byte[] getImageWithMediaType() throws IOException {
+		
+		System.out.println("/image/smile.jpg");
 		InputStream in = getClass().getResourceAsStream("/file/smile.jpg");
 		return IOUtils.toByteArray(in);
 	}
@@ -57,6 +60,8 @@ public class DownloadPrivateController {
 						method = RequestMethod.GET,
 						produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	public @ResponseBody byte[] getFile() throws IOException {
+		System.out.println("/file/file.txt");
+		
 		InputStream in = getClass().getResourceAsStream("/file/testReadfile.txt");
 		return IOUtils.toByteArray(in);
 	}
