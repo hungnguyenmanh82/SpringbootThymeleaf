@@ -26,7 +26,7 @@ import com.example.demo.model.Person;
 
 
 @Controller
-public class HttpRequestResponeController {
+public class HttpRedirectForwardController {
 
 	/**
 	 * body ban chat la binary
@@ -48,7 +48,7 @@ public class HttpRequestResponeController {
 			HttpServletResponse response) throws IOException, ServletException {
 
 		String uri = ((HttpServletRequest)request).getRequestURI().toString();
-		System.out.println("***** CustomFilter.doFilter: " + uri);
+		System.out.println("***** uri: " + uri);
 
 		//
 		if(objectId == 1){
