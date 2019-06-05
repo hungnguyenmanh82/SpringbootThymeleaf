@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:         
+    host-mode-app:
+        build:
+           context: .
+           dockerfile: Dockerfile
+        ports:
+           - "8080:8080"
+        # "host"= NAT network, Host Machine IP = gateway => connect internet ok
+        # “host” mode join all Network o lenh: “docker network ls”
+        # co the connect toi Host Machine (qua gateway IP hoặc qua IP of Host Machine)
+        # co the connect toi cac physical Machine trong LAN
+        # vì join vào all networks nen co the connect voi all containers
+        network_mode: "host"

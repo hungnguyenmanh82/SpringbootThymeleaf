@@ -41,7 +41,9 @@ public class HttpRequestHeaderController {
 			HttpServletResponse response) throws IOException, ServletException {
 		
 		String uri = ((HttpServletRequest)request).getRequestURI().toString();
+		String remoteAddr = request.getRemoteAddr();
 		System.out.println("***** uri: " + uri);
+		System.out.println("***** remoteAddress: " + remoteAddr);
 		
 		//=============================================================
 		Map<String, String> map = new HashMap<String, String>();

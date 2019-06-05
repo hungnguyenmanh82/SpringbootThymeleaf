@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:         
+    thymeleaf:
+        build:
+           context: .
+           dockerfile: Dockerfile
+        ports:
+          - "8088:8080"
+          - "127.0.0.1:8089:8080"
+        #network_mode: "bridge"
+        #network_mode: "host"   => ko connect dc o port 8080 hay 80

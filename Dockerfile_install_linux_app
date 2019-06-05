@@ -1,0 +1,24 @@
+FROM nginx:1.16
+
+# COPY <SRC> <DST>
+COPY ./config/nginx.conf  /etc/nginx/nginx.conf
+
+# copy all content của "static-data" vào folder "etc/nginx/static_data" trên container
+COPY ./static_data  /etc/nginx/static_data
+
+# ==============================================================
+# chi cung cho Debian OS  (Alpine đã có sẵn các tool này rồi)
+# ==============================================================
+# các lenh RUN chay rat cham luc build
+# run command on ubuntu: 2 cach viet 
+RUN ["apt-get", "update"]
+
+# de dung lenh show Process: "ps -ax" tren linux
+# "-y": de xac nhan install
+RUN ["apt-get", "install","-y", "procps"]
+RUN ["apt-get", "install", "-y", "vim"]
+
+#  ipconfig
+RUN ["apt-get", "install", "-y", "net-tools"]
+# ping
+RUN ["apt-get", "install", "-y", "iputils-ping"]
