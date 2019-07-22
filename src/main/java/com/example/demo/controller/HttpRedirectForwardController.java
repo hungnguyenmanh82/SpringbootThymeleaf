@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.form.PersonForm;
 import com.example.demo.model.Person;
 
-
+/**
+@controller: bản chất là đăng ký nhận Event từ client (vd: http event, STOMP event với websocket)
+@RequestMapping(): là đăng ký nhận Event từ Http request
+ */
 @Controller
 public class HttpRedirectForwardController {
 
