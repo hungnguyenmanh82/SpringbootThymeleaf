@@ -20,7 +20,10 @@ import com.example.demo.form.PersonForm;
 import com.example.demo.model.Person;
 
 
-
+/**
+@controller: bản chất là đăng ký nhận Event từ client (vd: http event, STOMP event với websocket)
+@RequestMapping(): là đăng ký nhận Event từ Http request
+ */
 @Controller
 public class BinaryBodyController {
 
@@ -31,6 +34,8 @@ public class BinaryBodyController {
 	 * Phan content-type: application/octect-stream   => dùng html form ko dc. Phai dung ARC plugin của google hoặc Từ javaSource moi set dc content-type 
 	 * neu html form type= text  => thì inputstream se tra ve la empty
 	 * html form type sẽ phải quy đổi ra các content-type chuẩn của http protocol
+	 * Lý do:
+	 *  quá trình
 	 */
 	@RequestMapping(path = "/postBinary", method = RequestMethod.POST)
 	//@ResponseBody String: de tra ve body of response kieu String

@@ -22,7 +22,10 @@ import com.example.demo.model.Person;
 import com.example.demo.model.UserRole;
 
 
-
+/**
+@controller: bản chất là đăng ký nhận Event từ client (vd: http event, STOMP event với websocket)
+@RequestMapping(): là đăng ký nhận Event từ Http request
+ */
 @Controller
 public class ThymleafController {
 	
